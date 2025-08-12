@@ -13,10 +13,10 @@
 
     let age = window.prompt("Enter your current age ", "10");
     let oldAge = window.prompt ("Enter the age you think you will live up to ", "100");
-    let favoritesnack = window.prompt ("What is your favorite snack? ", "pizza");
+    let favoriteSnack = window.prompt ("What is your favorite snack? ", "pizza");
     let snacksPerDay = window.prompt ("Enter the amount of times you eat your favorite snack in a day ", "2");
     
-    let sure = window.confirm(`Is ${favoritesnack} really your favorite snack?`);
+    let sure = window.confirm(`Is ${favoriteSnack} really your favorite snack?`);
 
     if (sure == true) {
       var total = (snacksPerDay * 365) * (oldAge - age);
