@@ -23,18 +23,21 @@
     <input id = "inp_sc">
     <br />
     <button id = "btn_submit">Submit</button>
+<p id="result">Total Meal: </p>
 
-
-    <script type = "text/javascript">
-        const btn = document.getElementbyId("btn_submit");
-        const mealPrice = document.getElementaryId("inp_mealPrice");
+    <script type="text/javascript">
+        const btn = document.getElementById("btn_submit");
+        const mealPrice = document.getElementById("inp_mp");
 
         btn.addEventListener('click', totalMeal);
         function totalMeal() {
-             alert(totalCost);
-             var mp, tip, sc;
+          var mp = Number(document.getElementById("inp_mp").value);
+          var tip = Number(document.getElementById("inp_tip").value);
+          var sc = Number(document.getElementById("inp_sc").value);
+    
+          
             totalCost = mp + tip + (sc / 100 * mp);
-         
+         document.getElementById("result").innerHTML = "Total Meal: " + totalCost.toFixed(2);
         }
     </script>
 
