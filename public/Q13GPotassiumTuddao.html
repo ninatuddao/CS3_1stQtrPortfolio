@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+   <h2> Q1 3rd Graded Exercise submitted by Nina Tuddao of Potassium</h2>
+   <head>
+        <style>
+          body {
+            background-color: plum;
+            font-size: 30px;
+            color: purple;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+          }
+        </style>
+      </head>
+
+    <body> Guess the number: **** <br> The number is from 1 to 100
+    <div>Enter your guess:
+<input id = "inp_guess">
+   <br> <button id = "btn_submit">Submit</button>
+<p id="result">Result: </p>
+    
+    <script type="text/javascript">
+
+       var dNumber = Math.floor(Math.random() * 100) + 1; // generates a number from 1  to 100 when the page loads
+
+        document.getElementById("btn_submit").addEventListener("click", checkIt);
+
+        function checkIt() {
+        let guess = Number(document.getElementById("inp_guess").value);
+        let result;
+             
+            if (guess < dNumber){
+                result = "Higher";
+            } 
+            else if (guess > dNumber){
+                result = "Lower";
+            } 
+            else if (guess == dNumber){
+                result = "Correct";
+            }
+            else {
+                result = "Please enter a valid number";
+            }
+        document.getElementById("result").innerHTML = "Result: " + result;
+        }
+    </script>
+
+</body>
+</html>
