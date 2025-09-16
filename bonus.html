@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <style>
+      body {
+        background-color: rgb(255, 208, 208);
+        font-size: 12px;
+        color: rgb(134, 67, 67);
+      }
+    </style>
+  </head>
+
+
+<h1>My Favorite Numbers</h1>
+<ul id="numberList"></ul>
+
+<script>
+  let list = document.getElementById("numberList");
+  for (let i = 1; i <= 10; i++) {
+    if (i % 2 == 0){
+    list.innerHTML += `<li>Number ${i}</li>`;
+  }}
+</script>
+
+
+
+<h1> My FAVORITE Animals!</h1>
+<ul id="animalslist"></ul>
+
+<script>
+    let animals = ['Dogs', 'Monkey', 'Elephant', 'Bunny'];
+    let lists = document.getElementById("animalslist");
+
+    for (let i = 0; i < animals.length; i++){
+        lists.innerHTML += `<li>${animals[i]}</li>`;
+    }
+
+    
+
+    animals.push("Kitties");
+    document.write("New Array: <br>")
+    document.write (animals);
+
+</script>
+
+
+<h1>Guess a Letter</h1>
+<input type="text" id="letterInput" maxlength="1">
+<button onclick="addGuess()">Guess</button>
+<p>Guessed letters: <span id="guesses"></span></p>
+
+<script>
+  let guessedLetters = [];
+
+  function addGuess() {
+    let letter = document.getElementById("letterInput").value;
+    if (!guessedLetters.includes(letter)){
+    guessedLetters.push(letter);
+    document.getElementById("guesses").textContent = guessedLetters.join(", ");
+    document.getElementById("letterInput").value = "";
+  }}
+
+  function not_duplicate(letter) {
+
+for(let i = 0; i < guessedLetters.length; i++) {
+  if (guessedLetters[i] === letter) {
+    return false;
+  }
+}
+return true;
+}
+
+ 
+</script>
