@@ -21,11 +21,12 @@
 <input type="text" id="guessInput" maxlength="1">
 <button onclick="makeGuess()">Guess</button>
 <p id="message"></p>
+<p> Remanining Attempts: <span id="counter"></span></p>
 
 <script>
   let secretWord = ["n", "i", "c", "e"];
   let guessedWord = ["_", "_", "_", "_"];
-
+  let counter = 10;
   document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
 
   function makeGuess() {
@@ -36,7 +37,9 @@
       if (secretWord[i] === guess) {
         guessedWord[i] = guess;
         correct = true;
+        counter--;
       }
+    
     }
 
     document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
