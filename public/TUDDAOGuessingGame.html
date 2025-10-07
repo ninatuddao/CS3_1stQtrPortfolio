@@ -4,7 +4,9 @@
       body {
         background-color: rgb(255, 208, 208);
         font-size: 50px;
-        color: rgb(134, 67, 67);
+        text-align:center;
+        color: rgb(19, 29, 68);
+        background-image: url('landscape.jpg');
       }
       .center-text{
         text-align: center;
@@ -14,16 +16,17 @@
 
 
 
-  <h1>Guess My Word</h1>
+  <h1>❀ Guess My Word ❀</h1>
 <p id="wordDisplay"></p>
 <input type="text" id="guessInput" maxlength="1">
 <button onclick="makeGuess()">Guess</button>
 <p id="message"></p>
+<p> Remanining Attempts: <span id="counter"></span></p>
 
 <script>
-  let secretWord = ["n", "i", "c", "e"];
-  let guessedWord = ["_", "_", "_", "_"];
-
+  let secretWord = ["n", "i", "c", "e", "n","i","n","a"];
+  let guessedWord = ["_", "_", "_", "_","_","_","_","_"];
+  let counter = 10;
   document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
 
   function makeGuess() {
@@ -34,7 +37,9 @@
       if (secretWord[i] === guess) {
         guessedWord[i] = guess;
         correct = true;
+        counter--;
       }
+    
     }
 
     document.getElementById("wordDisplay").textContent = guessedWord.join(" ");

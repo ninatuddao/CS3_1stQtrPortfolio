@@ -56,7 +56,8 @@
     if (!guessedLetters.includes(letter)){
     guessedLetters.push(letter);
     document.getElementById("guesses").textContent = guessedLetters.join(", ");
-    document.getElementById("letterInput").value = "";
+    document.getElementById("letterInput").value = ""; 
+    attempts--;
   }}
 
   function not_duplicate(letter) {
